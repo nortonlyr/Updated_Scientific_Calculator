@@ -21,7 +21,7 @@ class Calculator:
     def square(self, x):
         return x ** 2
 
-    def exp(self, x, y):
+    def powerof(self, x, y):
         return x ** y
 
     def square_root(self, x):
@@ -75,7 +75,11 @@ class Calculator:
     def logbasex(self, x, base):
         return math.log(x, base)
 
+    def logbasee(self, x):
+        return math.log(x)
 
+    def inv_logten(self, x):
+        return 1/(math.log10(x))
 
     # def inv_log(self, x):
     #     return math

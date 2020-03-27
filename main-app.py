@@ -39,7 +39,7 @@ def displayResult(x: float):
 def choose_op():
     print("List of choice")
     print("-" * 50)
-    print('1 Addition           2 Subtraction       3 Multiplication        4 Division')
+    print('1 Add                2 Subtract          3 Multiply              4 Divide')
     print('5 Power              6 Square            7 Square Root           8 Inverse')
     print('9 Sin                10 Cos              11 Tan                  12 cot')
     print('13 invSin            14 invCos           15 invTan               16 Factorial')
@@ -49,7 +49,7 @@ def choose_op():
     print('30 Radian            31 M+               31 MRC                  32 MC' )
     print('35. Exit')
     print(' ')
-    op = int(input('Choose an operation: '))
+    # op = int(input('Choose an operation: '))
 
 
 def performCalcLoop(calc):
@@ -66,21 +66,21 @@ def performCalcLoop(calc):
             x = displayResult(calc.add(a, b))
         elif choice == 'Subtract':
             a, b = getTwoNumbers()
-            x = displayResult(calc.sub(a, b))
+            x = displayResult(calc.subtract(a, b))
 
         elif choice == 'Multiply':
             a, b = getTwoNumbers()
-            x = displayResult(calc.mul(a, b))
+            x = displayResult(calc.multiply(a, b))
 
         elif choice == 'Division':
             a, b = getTwoNumbers()
             if b != 0:
-                x = displayResult(calc.div(a, b))
+                x = displayResult(calc.divide(a, b))
             else:
                 print('invalid input')
                 performCalcLoop(calc)
 
-        elif choice == 'Exponent':
+        elif choice == 'Power':
             print("1st num: base, 2nd num: Exponent")
             a, b = getTwoNumbers()
             x = displayResult(calc.powerof(a, b))
@@ -113,7 +113,6 @@ def performCalcLoop(calc):
             a = getFirstNumber()
             x = displayResult(calc.cotrad(a))
 
-
         elif choice == 'Sine in degrees':
             a = getFirstNumber()
             x = displayResult(calc.sindeg(a))
@@ -136,10 +135,10 @@ def performCalcLoop(calc):
         elif choice == 'Factorial':
             a = getFirstNumber()
             x = displayResult(calc.factorial(a))
-        elif choice == 'Base 10 log':
+        elif choice == 'Log 10':
             a = getFirstNumber()
             x = displayResult(calc.logten(a))
-        elif choice == 'inverse log, 10^x':
+        elif choice == '10^x': #inverse log
             a = getFirstNumber()
             x = displayResult(calc.inv_logten(a))
         elif choice == 'Natural log':
@@ -193,10 +192,10 @@ def performCalcLoop(calc):
             print("That is not a valid input.")
             performCalcLoop(calc)
 
-        performCalcLoop(calc, a)
+        performCalcLoop(a)
 
 def performaCalcLoop(calc, a):
-    x =a
+    x = a
     while True:
         choose_op()
 
@@ -213,19 +212,19 @@ def performaCalcLoop(calc, a):
             x = displayResult(calc.add(a, b))
         elif choice == 'Subtract':
             a, b = getTwoNumbers()
-            x = displayResult(calc.sub(a, b))
+            x = displayResult(calc.subtract(a, b))
         elif choice == 'Multiply':
             b = getSecondNumber()
-            x = displayResult(calc.mul(a, b))
-        elif choice == 'Division':
+            x = displayResult(calc.multuply(a, b))
+        elif choice == 'Divide':
             b = getSecondNumber()
             if b != 0:
-                x = displayResult(calc.div(a, b))
+                x = displayResult(calc.divide(a, b))
             else:
                 print("Cannot Divide by Zero")
                 performCalcLoop(calc, a)
 
-        elif choice == 'Exponent':
+        elif choice == 'Power':
             print("1st num: base, 2nd num: Exponent")
             b = getSecondNumber()
             x = displayResult(calc.powerof(a, b))

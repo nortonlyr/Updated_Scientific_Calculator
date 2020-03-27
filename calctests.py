@@ -3,30 +3,23 @@ from calculator import Calculator
 
 
 class TestStringMethods(unittest.TestCase):
+c = Calculator()
 
     def test_add(self):
-        c = Calculator()
         self.assertEqual(c.add(3, 3), 6)
+        self.assertEqual(c.add(10, 7), 17)
 
-    def test_add2(self):
-        c = Calculator()
-        self.assertEqual(c.add(12, -10), 2)
-
-    def test_add3(self):
-        c = Calculator()
-        self.assertEqual(c.add(5, 8), 13)
-
-    def test_sub(self):
-        c = Calculator()
-        self.assertEqual(c.subtract(9, 3), 6)
+    def test_subtract(self):
+        self.assertEqual(c.sub(12, -10), 2)
+        self.assertEqual(c.sub(100, -32), 68)
 
     def test_multiply(self):
-        c = Calculator()
-        self.assertEqual(c.mutiply(9, 3), 27)
+        self.assertEqual(c.add(10, 3), 30)
+        self.assertEqual(c.add(14, 7), 98)
 
     def test_divide(self):
-        c = Calculator()
-        self.assertEqual(c.divide(12, 3), 4)
+        self.assertEqual(c.subtract(9, 3), 6)
+        self.assertEqual(c.add(10, 3), 30)
 
     def test_square(self):
         c = Calculator()
@@ -40,7 +33,7 @@ class TestStringMethods(unittest.TestCase):
         c = Calculator()
         self.assertEqual(c.square_root(9), 3)
 
-    def inv(self):
+    def test_inv(self):
         c = Calculator()
         self.assertEqual(c.inv(4), 0.25)
 
