@@ -3,10 +3,11 @@ import decimal
 import math
 
 global mem
+mem = 0
 
 
 def getFirstNumber():
-    a = input("first Number? ")
+    a = input("First Input? ")
     while type(a) == str:
         try:
             a = float(a)
@@ -16,7 +17,7 @@ def getFirstNumber():
     return a
 
 def getSecondNumber():
-    b = input('Second Number?')
+    b = input('Second Input?')
     while type(b) == str:
         try:
             b = float(b)
@@ -34,6 +35,7 @@ def getTwoNumbers():
 
 def displayResult(x: float):
     print(x, "\n")
+    return x
 
 
 def choose_op():
@@ -41,13 +43,12 @@ def choose_op():
     print("-" * 50)
     print('1 Add                2 Subtract          3 Multiply              4 Divide')
     print('5 Power              6 Square            7 Square Root           8 Inverse')
-    print('9 Sin                10 Cos              11 Tan                  12 cot')
-    print('13 invSin            14 invCos           15 invTan               16 Factorial')
+    print('9 Sinrad             10 Cosrad           11 Tanrad               12 Cotrad')
+    print('13 Sindeg            14 Cosdeg           15 Tandeg               16 Cotdeg')
     print('17 Factorial         18 Log 10           19 10^x                 20 Ln ')
     print('21 e^x               22 Log base         23 Binary               24 Octal')
     print('25 Decimal           26.Hexidecimal      27.Switch Sign          28 Degree' )
-    print('30 Radian            31 M+               31 MRC                  32 MC' )
-    print('35. Exit')
+    print('29 Radian            30 M+               31 MRC                  32 MC' )
     print(' ')
     # op = int(input('Choose an operation: '))
 
@@ -61,18 +62,18 @@ def performCalcLoop(calc):
         if choice == 'q':
             break  # user types q to quit calulator.
 
-        elif choice == 'Add':
+        elif choice == '1': #'Add'
             a, b = getTwoNumbers()
             x = displayResult(calc.add(a, b))
-        elif choice == 'Subtract':
+        elif choice == '2': #'Subtract':
             a, b = getTwoNumbers()
             x = displayResult(calc.subtract(a, b))
 
-        elif choice == 'Multiply':
+        elif choice == '3': #'Multiply'
             a, b = getTwoNumbers()
             x = displayResult(calc.multiply(a, b))
 
-        elif choice == 'Division':
+        elif choice == '4': #'Division'
             a, b = getTwoNumbers()
             if b != 0:
                 x = displayResult(calc.divide(a, b))
@@ -80,112 +81,112 @@ def performCalcLoop(calc):
                 print('invalid input')
                 performCalcLoop(calc)
 
-        elif choice == 'Power':
+        elif choice == '5': #'Power'
             print("1st num: base, 2nd num: Exponent")
             a, b = getTwoNumbers()
             x = displayResult(calc.powerof(a, b))
-        elif choice == 'Square':
+        elif choice == '6': #'Square'
             a = getFirstNumber()
             x = displayResult(calc.square(a))
-        elif choice == 'Square Root':
+        elif choice == '7': #'Square Root'
             a = getFirstNumber()
             x = displayResult(calc.squareroot(a))
-        elif choice == 'Inverse':
+        elif choice == '8': #'Inverse'
             a = getFirstNumber()
             x = displayResult(calc.squareroot(a))
 
-        elif choice == 'Sine in radians':
+        elif choice == '9': #'Sine in radians':
             a = getFirstNumber()
             x = displayResult(calc.sinrad(a))
-        elif choice == 'Cosine in radians':
+        elif choice == '10': #'Cosine in radians':
             a = getFirstNumber()
             x = displayResult(calc.cosrad(a))
-        elif choice == 'Tangent in radians':
+        elif choice == '11': #'Tangent in radians':
             a = getFirstNumber()
             x = displayResult(calc.tanrad(a))
-        elif choice == 'Costangent in radians':
+        elif choice == '12': #'Costangent in radians':
             a = getFirstNumber()
             x = displayResult(calc.cosecrad(a))
-        elif choice == 'Secant in radian':
-            a = getFirstNumber()
-            x = displayResult(calc.secrad(a))
-        elif choice == 'Cotangent in radian':
-            a = getFirstNumber()
-            x = displayResult(calc.cotrad(a))
+        # elif choice == '13': #'Secant in radian':
+        #     a = getFirstNumber()
+        #     x = displayResult(calc.secrad(a))
+        # elif choice == '14': #'Cotangent in radian':
+        #     a = getFirstNumber()
+        #     x = displayResult(calc.cotrad(a))
 
-        elif choice == 'Sine in degrees':
+        elif choice == '13': #'Sine in degrees':
             a = getFirstNumber()
             x = displayResult(calc.sindeg(a))
-        elif choice == 'Cosine in degrees':
+        elif choice == '14': #'Cosine in degrees':
             a = getFirstNumber()
             x = displayResult(calc.cosdeg(a))
-        elif choice == 'Tangent in degrees':
+        elif choice == '15': #'Tangent in degrees':
             a = getFirstNumber()
             x = displayResult(calc.tandeg(a))
-        elif choice == 'Cosecant in degrees':
+        elif choice == '16': #'Cosecant in degrees':
             a = getFirstNumber()
             x = displayResult(calc.cosecdeg(a))
-        elif choice == 'Secant in degrees':
-            a = getFirstNumber()
-            x = displayResult(calc.secdeg(a))
-        elif choice == 'Cotangent in degrees':
-            a = getFirstNumber()
-            x = displayResult(calc.cotdeg(a))
+        # elif choice == 'Secant in degrees':
+        #     a = getFirstNumber()
+        #     x = displayResult(calc.secdeg(a))
+        # elif choice == 'Cotangent in degrees':
+        #     a = getFirstNumber()
+        #     x = displayResult(calc.cotdeg(a))
 
-        elif choice == 'Factorial':
+        elif choice == '17': #'Factorial':
             a = getFirstNumber()
             x = displayResult(calc.factorial(a))
-        elif choice == 'Log 10':
+        elif choice == '18': #'Log 10':
             a = getFirstNumber()
             x = displayResult(calc.logten(a))
-        elif choice == '10^x': #inverse log
+        elif choice == '19': #'10^x' inverse log
             a = getFirstNumber()
             x = displayResult(calc.inv_logten(a))
-        elif choice == 'Natural log':
+        elif choice == '20': #'Natural log':
             a = getFirstNumber()
             x = displayResult(calc.ln(a))
-        elif choice == 'Inverse Natural log, e^x':
+        elif choice == '21': #Inverse Natural log, e^x':
             a = getFirstNumber()
             x = displayResult(calc.inv_ln(a))
 
-        elif choice == 'log base x':
+        elif choice == '22': #'log base x':
             a, b = getTwoNumbers()
             x = displayResult((calc.log_base_x(a,b)))
 
-        elif choice == 'Binary':
+        elif choice == '23': #'Binary':
             a = getFirstNumber()
             x = displayResult(bin(int(a)))
             x = a
-        elif choice == 'Octal':
+        elif choice == '24': #Octal':
             a = getFirstNumber()
             x = displayResult(oct(int(a)))
             x = a
-        elif choice == 'decimal':
+        elif choice == '25': #'Decimal':
             a = getFirstNumber()
             x = displayResult(decimal(int(a)))
             x = a
-        elif choice == 'Hexidecimal':
+        elif choice == '26': #Hexidecimal':
             a = getFirstNumber()
             x = displayResult(decimal.Decimal(int(a)))
             x = a
 
-        elif choice == 'Switch Sign':
+        elif choice == '27': #'Switch Sign':
             a = getFirstNumber()
             x = displayResult(calc.switchsign(a))
 
-        elif choice == 'Degree':
+        elif choice == '28': #'Degree':
             a = getFirstNumber()
             x = displayResult(math.degrees(a))
-        elif choice == 'Radian':
+        elif choice == '29': #Radian':
             a = getFirstNumber()
             x = displayResult(math.radian(a))
 
-        elif choice == 'M+':
+        elif choice == '30': #'M+':
             global mem
             mem = x
-        elif choice == "MRC":
+        elif choice == '31': #'"MRC":
             x = mem
-        elif choice == "MC":
+        elif choice == '32': #"MC":
             mem = 0
 
         else:
