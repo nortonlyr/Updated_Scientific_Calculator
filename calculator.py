@@ -28,7 +28,7 @@ class Calculator:
         return x ** (1/2)
 
     def inv(self, x):
-        return  1 / x
+        return 1 / x
 
     def sinrad(self, x):
         return math.sin(x)
@@ -40,7 +40,7 @@ class Calculator:
         return math.tan(x)
 
     def cotrad(self, x):
-        return 1/(math.tan(x))
+        return 1/(math.tan(math.radians(x)))
 
     def secrad(self, x):
         return 1/(math.cos(x))
@@ -49,22 +49,22 @@ class Calculator:
         return 1/(math.sin(x))
 
     def sindeg(self, x):
-        return math.sin(math.degrees(x))
+        return math.sin(math.radians(x))
 
     def cosdeg(self, x):
-        return math.cos(    math.degrees(x))
+        return math.cos(math.radians(x))
 
     def tandeg(self, x):
-        return math.tan(math.degrees(x))
+        return math.tan(math.radians(x))
 
     def cotdeg(self, x):
-        return 1/(math.sin(math.degrees(x)))
+        return 1/(math.tan(math.radians(x)))
 
     def secdeg(self, x):
-        return 1/(math.cos(math.degrees(x)))
+        return 1/(math.cos(math.radians(x)))
 
     def cscdeg(self, x):
-        return 1/(math.sin(math.degrees(x)))
+        return 1/(math.sin(math.radians(x)))
 
     def factorial(self, x):
         return math.factorial(x)
@@ -83,7 +83,6 @@ class Calculator:
 
     # def inv_log(self, x):
     #     return math
-    #
     #
     # def invCos(self, x):
     #     return math.acos(x)
